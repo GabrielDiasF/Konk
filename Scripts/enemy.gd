@@ -13,9 +13,18 @@ func _physics_process(delta: float) -> void:
 	if raycast.is_colliding():
 		var objeto_atingido = raycast.get_collider()
 		
+		# DIAGNÓSTICO: Mostra na consola (Output) exatamente com o que o raio bateu
+		print("Raycast colidiu com: ", objeto_atingido.name)
+		
 		if objeto_atingido.name == "Player": 
 			if pode_atirar:
 				atirar()
+		else:
+			print("-> O raio bateu nisto, mas não é o 'Player'.")
+	else:
+		# Descomente a linha abaixo se quiser testar se o raio sequer está a detetar algo
+		# print("Raycast não está a colidir com nada.")
+		pass
 
 func atirar() -> void:
 	pode_atirar = false
@@ -26,10 +35,13 @@ func atirar() -> void:
 		nova_bala.global_position = ponto_de_disparo.global_position
 		print("DEBUG: O tiro foi instanciado com sucesso!")
 	else:
-		print("ERRO CRÍTICO: O ficheiro bullet.tscn não foi encontrado pelo script!")
+		print("ERRO CRÍTICO: O ficheiro EnemyBullet.tscn não foi encontrado pelo script!")
 	
 	await get_tree().create_timer(1.0).timeout
-	pode_atirar = true
+	
+	# Segurança: garante que o inimigo ainda existe antes de liberar o tiro de novo
+	if is_inside_tree():
+		pode_atirar = true
 
 func take_damage(amount: int) -> void:
 	health -= amount

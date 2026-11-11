@@ -1,25 +1,61 @@
-[gd_scene format=3 uid="uid://3xeihtccvhl7"]
+[gd_scene format=4 uid="uid://3xeihtccvhl7"]
 
 [ext_resource type="Script" uid="uid://h1hhrnmnsi16" path="res://Scripts/bullet.gd" id="1_v7oki"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qmg03"]
-radius = 0.0703125
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juqk6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_huqcj"]
+_surfaces = [{
+"aabb": AABB(-1.7242666, -0.19999999, -0.20000005, 3.3919997, 0.39999998, 0.40000004),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("BgABAAIACgABAAYACgALAAEACwAHAAEAAQAHAAIAAAALAAoADAAKAAYAAAAKAAwADAAGAAMAAwAGAAIADQAMAAMAAAAMAA0ADQADAAkACQADAAIADgANAAkAAAANAA4ABAAJAAIADgAJAAQAAAAOAA8ADwAOAAQAAAAQAAsACwAQAAcAAAAPABEAAAARABAADwAEAAgAEQAPAAgACAAEAAIAEAARAAUAEQAIAAUAEAAFAAcABQAIAAIABwAFAAIA"),
+"lods": [0.122975744, PackedByteArray("BgABAAIAAQAHAAIAAAABAAYAAAAHAAEAAwAGAAIAAAAGAAMABwAFAAIAAAAFAAcABQAIAAIAAAAIAAUACQADAAIAAAADAAkACAAEAAIAAAAEAAgABAAJAAIAAAAJAAQA"), 0.18446362, PackedByteArray("AAABAAIAAAACAAEAAAACAAMAAAADAAIAAAACAAQAAAAEAAIAAAACAAUAAAAFAAIA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAD/f/9/AAAys4HafSUAAP///3//fwAAMrOB2oHaAAAys30lgdoAADKzfSV9JQAAMrP///9/AAAys/9/AAAAADKzAAD/fwAAMrP/f///AACZWf///38AAJlZgdp9JQAAmVmB2oHaAACZWf9///8AAJlZfSWB2gAAmVkAAP9/AACZWf9/AAAAAJlZfSV9JQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ahyt"]
+resource_name = "cero_cero"
+_surfaces = [{
+"aabb": AABB(-1.7242666, -0.19999999, -0.20000005, 3.3919997, 0.39999998, 0.40000004),
+"attribute_data": PackedByteArray("AP/x/////38A//H//99mJgD/8f//3wAAAP/x///f/38A//H//78AAAD/8f//32YmAP/x//+//38A//H//59mJgD/8f//nwAAAP/x//+f/38A//H//38AAAD/8f//n2YmAP/x//9//38A//H//19mJgD/8f//XwAAAP/x//9f/38A//H//z8AAAD/8f//X2YmAP/x//8//38A//H//x9mJgD/8f//HwAAAP/x//8f/38A//H/AAAAAAD/8f//H2YmAP/x////ZiYA//H//79mJgD/8f//v2YmAP/x//9/ZiYA//H//39mJgD/8f//P2YmAP/x//8/ZiYA//H/AABmJgD/8f///2YmAP/x///fZiYA//H//99mJgD/8f//v2YmAP/x//+/ZiYA//H//59mJgD/8f//n2YmAP/x//9/ZiYA//H//39mJgD/8f//X2YmAP/x//9fZiYA//H//z9mJgD/8f//P2YmAP/x//8fZiYA//H//x9mJgD/8f8AAGYmAP/x//8fMlMA//H/AAAyUwD/8f//PzJTAP/x//8fMlMA//H//18yUwD/8f//PzJTAP/x//9/MlMA//H//18yUwD/8f//nzJTAP/x//9/MlMA//H//78yUwD/8f//nzJTAP/x///fMlMA//H//78yUwD/8f///zJTAP/x///fMlMA//H//98yUwD/8f///zJTAP/x//+/MlMA//H//98yUwD/8f//nzJTAP/x//+/MlMA//H//38yUwD/8f//nzJTAP/x//9fMlMA//H//38yUwD/8f//PzJTAP/x//9fMlMA//H//x8yUwD/8f//PzJTAP/x/wAAMlMA//H//x8yUw=="),
+"format": 34896613407,
+"index_count": 96,
+"index_data": PackedByteArray("IAAhAAIAIgAjAAQAJAAlAAgAJgAnAAoAKAApAA4AKgArABAALAAtABQALgAvABYAMAAfABcAMAAxAB8AMgATAB4AMgAzABMANAAdABEANAA1AB0ANgANABwANgA3AA0AOAAbAAsAOAA5ABsAOgAHABoAOgA7AAcAPAAZAAUAPAA9ABkAPgABABgAPgA/AAEAAABAAEEAAwBCAEMABgBEAEUACQBGAEcADABIAEkADwBKAEsAEgBMAE0AFQBOAE8A"),
+"lods": [0.122975744, PackedByteArray("GAABAAIAAAABABgABQAZAAQAAwAZAAUAGgAHAAgABgAHABoACwAbAAoACQAbAAsAHAANAA4ADAANABwAEQAdABAADwAdABEAHgATABQAEgATAB4AFwAfABYAFQAfABcA"), 0.18446362, PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcA")],
+"material": SubResource("StandardMaterial3D_juqk6"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray("AAD/f/9/I9sys4HafSUZ3////3//f9rjAAD/f/9/VfD///9//3/d+TKzgdp9Jbj0AAD/f/9/I/kys30lfSW49P///3//f5/vAAD/f/9/LeP///9//3+B2jKzfSV9JRnfAAD/f/9/988ys30lgdrIzP///3//f2vJAAD/f/9/+cL///9//391wDKzfSWB2ozBAAD/f/9/ksAys4HagdqMwf///3//fz/DAAD/f/9/3sn///9//3+C0DKzgdqB2sjMMrP///9/Gd8ys/9/AAC49DKz/38AALj0MrMAAP9/Gd8yswAA/3/IzDKz/3///4zBMrP/f///jMEys////3/IzDKz////f9rjMrOB2n0l2uMys4HafSXd+TKz/38AAN35MrP/fwAAn+8ys30lfSWf7zKzfSV9JYHaMrMAAP9/gdoyswAA/39ryTKzfSWB2mvJMrN9JYHadcAys/9///91wDKz/3///z/DMrOB2oHaP8Mys4HagdqC0DKz////f4LQmVmB2oHayMyZWf///3/IzJlZ/3///4zBmVmB2oHajMGZWX0lgdqMwZlZ/3///4zBmVkAAP9/yMyZWX0lgdrIzJlZfSV9JRnfmVkAAP9/Gd+ZWf9/AAC49JlZfSV9Jbj0mVmB2n0luPSZWf9/AAC49JlZ////fxnfmVmB2n0lGd+ZWYHafSUj25lZ////fyPbmVn/fwAAVfCZWYHafSVV8JlZfSV9JSP5mVn/fwAAI/mZWQAA/38t45lZfSV9JS3jmVl9JYHa98+ZWQAA/3/3z5lZ/3////nCmVl9JYHa+cKZWYHagdqSwJlZ/3///5LAmVn///9/3smZWYHagdreydmu9LP4r/ivMrGcq2a7Qr3ruOq2Nbo1uuZGoUjJRclFY0Q2QvdOyVNWUVxLBlAGUAlYVGBkW2RbfV9bVflm/XTndTFlyG3IbUCLk5k2kjaSIJrWiRmhxKl/qN+emqSapPiv+K81ujW6yUXJRQZQBlBkW2RbyG3IbTaSNpKapJqkMrGcqzKxnKvruOq267jqtmNENkJjRDZCVlFcS1ZRXEt9X1tVfV9bVed1MWXndTFlIJrWiSCa1ol/qN+ef6jfnpqkmqSapJqkNpI2kjaSNpLIbchtyG3IbWRbZFtkW2RbBlAGUAZQBlDJRclFyUXJRTW6Nbo1ujW6+K/4r/iv+K/ZrvSz2a70s2a7Qr1mu0K95kahSOZGoUj3TslT907JUwlYVGAJWFRg+Wb9dPlm/XRAi5OZQIuTmRmhxKkZocSp")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_huqcj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nulvu"]
+vertex_color_use_as_albedo = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7oki"]
 radius = 0.072265625
+height = 1.0900879
 
 [node name="CBbullet" type="Area3D" unique_id=1614416018]
 collision_layer = 2
 collision_mask = 132
 script = ExtResource("1_v7oki")
 
-[node name="MeshBullet" type="MeshInstance3D" parent="." unique_id=1890740934]
-transform = Transform3D(1.9106855e-15, 4.3711143e-08, 0.99999523, 1, -4.3711143e-08, 0, 4.371139e-08, 0.9999944, -4.371118e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_qmg03")
+[node name="cero" type="MeshInstance3D" parent="." unique_id=339370555]
+transform = Transform3D(-1.4206201e-08, 0, 0.325, 0, 0.325, 0, -0.325, 0, -1.4206201e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_2ahyt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nulvu")
 
 [node name="CollisionBullet" type="CollisionShape3D" parent="." unique_id=966025286]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 4.535483e-10, -4.535483e-10, 0.010375977)
 shape = SubResource("CapsuleShape3D_v7oki")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1489257214]
-aabb = AABB(-0.07257574, -0.06473214, -1, 0.14515148, 0.12946428, 2)
+aabb = AABB(-0.07257574, -0.06473214, -0.5566767, 0.14515148, 0.12946428, 1.1133534)
