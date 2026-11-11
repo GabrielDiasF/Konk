@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c2tc4uev7pjcl"]
+
+[ext_resource type="Script" uid="uid://85yhbrlqauwt" path="res://Scripts/tela_morte.gd" id="1_0x5n5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmg03"]
+font_size = 67
+
+[node name="tela_morte" type="Control" unique_id=642054768]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0x5n5")
+
+[node name="Label" type="Label" parent="." unique_id=1458373369]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46600002
+anchor_right = 0.5
+anchor_bottom = 0.46600002
+offset_left = -248.5
+offset_top = -259.96802
+offset_right = 248.5
+offset_bottom = -167.96802
+grow_horizontal = 2
+grow_vertical = 2
+text = "VOCÊ MORREU!"
+label_settings = SubResource("LabelSettings_qmg03")
+
+[node name="btnTA" type="Button" parent="." unique_id=794126678]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -73.0
+offset_right = 99.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tentar novamente"
+
+[node name="btnTelaInicial" type="Button" parent="." unique_id=711876777]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -18.0
+offset_right = 99.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tela inicial"
+
+[node name="btnSair" type="Button" parent="." unique_id=1491939756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = 36.0
+offset_right = 99.5
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair
+"
+
+[connection signal="pressed" from="btnTA" to="." method="_on_btn_ta_pressed"]
+[connection signal="pressed" from="btnTelaInicial" to="." method="_on_btn_tela_inicial_pressed"]
+[connection signal="pressed" from="btnSair" to="." method="_on_btn_sair_pressed"]

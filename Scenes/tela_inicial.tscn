@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b8ob3ewk1sxdu"]
+
+[ext_resource type="Script" uid="uid://353tnyqddsr" path="res://Scripts/tela_inicial.gd" id="1_qtomq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmg03"]
+font_size = 73
+outline_color = Color(0.34581107, 0.45139503, 0.31223762, 1)
+
+[node name="Tela_inicial" type="Control" unique_id=274293770]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtomq")
+
+[node name="Jogar_btn" type="Button" parent="." unique_id=452606022]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -15.5
+offset_right = 143.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jogar"
+
+[node name="Sair_btn" type="Button" parent="." unique_id=1243989463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = 34.0
+offset_right = 143.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair
+"
+
+[node name="Label" type="Label" parent="." unique_id=413549836]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -373.0
+offset_right = 276.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KONK: UMA AVENTURA INTERGALATICA"
+label_settings = SubResource("LabelSettings_qmg03")
+
+[connection signal="pressed" from="Jogar_btn" to="." method="_on_jogar_btn_pressed"]
+[connection signal="pressed" from="Sair_btn" to="." method="_on_sair_btn_pressed"]

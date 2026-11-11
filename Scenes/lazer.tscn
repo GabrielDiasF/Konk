@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dqtwl0vxto58"]
+
+[ext_resource type="Script" uid="uid://oc5iriulfvxm" path="res://Scripts/lazer.gd" id="1_avoeb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qmg03"]
+height = 19.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psmbb"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission_energy_multiplier = 14.89
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykh0f"]
+height = 19.25
+
+[node name="lazer" type="Area3D" unique_id=986602785]
+transform = Transform3D(-4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -3.821371e-15, 0, -8.742278e-08, -1, 1, 0, 0)
+collision_layer = 2
+script = ExtResource("1_avoeb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=700296526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.973799e-14, -8.625, -9.947598e-14)
+mesh = SubResource("CapsuleMesh_qmg03")
+surface_material_override/0 = SubResource("StandardMaterial3D_psmbb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=860804487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.973799e-14, -8.625, -9.947598e-14)
+shape = SubResource("CapsuleShape3D_ykh0f")
