@@ -10,21 +10,12 @@ var bullet_scene: PackedScene = preload("res://Scenes/EnemyBullet.tscn")
 var pode_atirar: bool = true
 
 func _physics_process(delta: float) -> void:
-	if raycast.is_colliding():
+	if raycast and raycast.is_colliding():
 		var objeto_atingido = raycast.get_collider()
-		
-		# DIAGNÓSTICO: Mostra na consola (Output) exatamente com o que o raio bateu
-		print("Raycast colidiu com: ", objeto_atingido.name)
-		
-		if objeto_atingido.name == "Player": 
-			if pode_atirar:
-				atirar()
-		else:
-			print("-> O raio bateu nisto, mas não é o 'Player'.")
-	else:
-		# Descomente a linha abaixo se quiser testar se o raio sequer está a detetar algo
-		# print("Raycast não está a colidir com nada.")
-		pass
+		if objeto_atingido != null:
+			if objeto_atingido.name == "Player" or objeto_atingido.is_in_group("Player"):
+				if pode_atirar:
+					atirar()
 
 func atirar() -> void:
 	pode_atirar = false

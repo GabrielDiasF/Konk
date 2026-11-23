@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://j5nrkp5n4bw5"]
+
+[ext_resource type="Script" uid="uid://dnrbhbmf0dntp" path="res://Scripts/fases.gd" id="1_2ktmw"]
+[ext_resource type="Texture2D" uid="uid://bgr3v04ke6ovf" path="res://Images/Fases.png" id="1_eyj4w"]
+
+[node name="Fases" type="Control" unique_id=836332437]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ktmw")
+
+[node name="Fases" type="Sprite2D" parent="." unique_id=1725438286]
+z_index = -1
+position = Vector2(961.50006, 540)
+scale = Vector2(0.9984375, 1)
+texture = ExtResource("1_eyj4w")
+
+[node name="BotaoFase1" type="Button" parent="." unique_id=2078053083]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 463.0
+offset_right = 617.0
+offset_bottom = 743.0
+text = "FASE 1
+"
+
+[node name="BotaoFase2" type="Button" parent="." unique_id=1254397051]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 463.0
+offset_right = 1179.0
+offset_bottom = 743.0
+text = "FASE 2"
+
+[node name="BotaoFase3" type="Button" parent="." unique_id=1425098657]
+layout_mode = 0
+offset_left = 1302.0
+offset_top = 463.0
+offset_right = 1739.0
+offset_bottom = 743.0
+text = "FASE 3"
+
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_botao_fase_1_pressed"]
+[connection signal="pressed" from="BotaoFase2" to="." method="_on_botao_fase_2_pressed"]
+[connection signal="pressed" from="BotaoFase2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="BotaoFase3" to="." method="_on_botao_fase_3_pressed"]
+[connection signal="pressed" from="BotaoFase3" to="." method="_on_button_3_pressed"]
