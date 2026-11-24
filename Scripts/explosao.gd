@@ -1,8 +1,8 @@
 extends Area3D
 
 @export var escala_inicial: float = 0.2
-@export var escala_maxima: float = 6.0
-@export var velocidade_expansao: float = 10.0
+@export var escala_maxima: float = 7.0
+@export var velocidade_expansao: float = 11.5
 @export var raio_limite: float = 0.0 # Se maior que 0, destrói ao passar dessa distância da origem
 @export var dano_parede: int = 999
 

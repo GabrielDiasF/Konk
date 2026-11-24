@@ -64,6 +64,6 @@ position = Vector2(960, 540)
 texture = ExtResource("2_rrt2p")
 
 [connection signal="pressed" from="Jogar_btn" to="." method="_on_jogar_btn_pressed"]
-[connection signal="pressed" from="Creditos_btn" to="." method="_on_jogar_btn_pressed"]
 [connection signal="pressed" from="Creditos_btn" to="." method="_on_creditos_btn_pressed"]
+[connection signal="pressed" from="Creditos_btn" to="." method="_on_jogar_btn_pressed"]
 [connection signal="pressed" from="Sair_btn" to="." method="_on_sair_btn_pressed"]

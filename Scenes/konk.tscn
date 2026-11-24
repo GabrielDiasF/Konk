@@ -10,6 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://cq3x7h2cvx8k" path="res://Scenes/bombEnemy.tscn" id="8_on2c3"]
 [ext_resource type="PackedScene" uid="uid://cbr56srxy84l" path="res://Scenes/wall.tscn" id="9_xxbdg"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxbdg"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f63vx"]
+sky_material = SubResource("ProceduralSkyMaterial_xxbdg")
+
+[sub_resource type="Environment" id="Environment_kiwkd"]
+background_mode = 2
+sky = SubResource("Sky_f63vx")
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8loe0"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6mfhi"]
@@ -291,6 +303,9 @@ _data = {
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_hyj3f")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=902253350]
+environment = SubResource("Environment_kiwkd")
+
 [node name="Player" parent="." unique_id=735940190 groups=["Player"] instance=ExtResource("2_7fqeq")]
 transform = Transform3D(-4.3711385e-08, 4.371139e-08, -1, 4.371139e-08, 1, 4.371139e-08, 1, -4.371139e-08, -4.371139e-08, -4.3494424e-08, 0.0049634576, 0)
 collision_mask = 254
@@ -342,7 +357,7 @@ transform = Transform3D(1, -8.742278e-08, 5.5577313e-15, 8.742278e-08, 1, -6.357
 shape = SubResource("ConcavePolygonShape3D_n0c4f")
 
 [node name="AreaPassar" type="Area3D" parent="World" unique_id=700932069]
-transform = Transform3D(-1.0927844e-06, 1.0927848e-06, 25, 25, -1.0927847e-06, 1.0927845e-06, 1.0927848e-06, 25, -1.0927847e-06, 989.2869, 8.837893, -1.351351)
+transform = Transform3D(-1.0927844e-06, 1.0927848e-06, 25, 25, -1.0927852e-06, 1.0927846e-06, 1.0927848e-06, 25, -1.0927852e-06, 812.2778, 9.424974, -1.351351)
 script = ExtResource("4_7fqeq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/AreaPassar" unique_id=2082159610]
@@ -359,7 +374,7 @@ autoplay = &"RESET"
 transform = Transform3D(2.582009e-15, -5.9069453e-08, -1.3513513, -1.1286331e-22, -1.3513513, 5.9069453e-08, -1.3513513, -1.1286311e-22, -2.582009e-15, -154.04733, 20.783548, 3.86314e-07)
 
 [node name="Bomb2" parent="World" unique_id=442703957 instance=ExtResource("8_on2c3")]
-transform = Transform3D(2.5820082e-15, -5.9069453e-08, -1.3513513, -1.1286325e-22, -1.3513513, 5.9069453e-08, -1.3513513, -1.1286311e-22, -2.5820082e-15, -215.16133, 20.409618, 3.8631393e-07)
+transform = Transform3D(2.582008e-15, -5.9069453e-08, -1.3513513, -1.1286326e-22, -1.3513513, 5.9069453e-08, -1.3513513, -1.1286309e-22, -2.582008e-15, -209.29614, 20.40962, 3.8631399e-07)
 
 [node name="Bomb3" parent="World" unique_id=1077215877 instance=ExtResource("8_on2c3")]
 transform = Transform3D(2.5820071e-15, -5.9069453e-08, -1.3513513, -1.128633e-22, -1.3513513, 5.9069453e-08, -1.3513513, -1.1286301e-22, -2.5820071e-15, 18.111816, 11.7682295, 3.8631453e-07)
@@ -472,7 +487,10 @@ libraries/ = SubResource("AnimationLibrary_0023j")
 autoplay = &"RESET"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1444720863]
-transform = Transform3D(2.1852053e-08, -1, -7.293382e-08, 0.7436844, -3.250748e-08, 0.6685309, -0.6685309, -6.8848514e-08, 0.7436844, -468.31885, 8.792862, 135.39943)
+transform = Transform3D(-4.8988127e-08, -2.7027028, -8.0521545e-09, 0.9807128, -1.0272679e-08, -2.5184925, 2.5184925, -4.857104e-08, 0.9807128, -468.31885, 8.792864, 135.39943)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="World" unique_id=1579399587]
+transform = Transform3D(-8.002361e-08, -2.7027028, -2.1030739e-07, 1.690722, -2.141357e-07, 2.1085684, -2.1085684, -6.912937e-08, 1.6907219, -468.31885, 32.18121, 135.39943)
 
 [node name="Wall" parent="World" unique_id=1042523675 instance=ExtResource("9_xxbdg")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, 252.05127, 14.356121, 3.8631472e-07)
