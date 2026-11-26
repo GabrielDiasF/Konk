@@ -1,14 +1,13 @@
 extends Area3D
 
 @export var health: int = 10
-@export var tempo_ligado: float = 2.0    # O laser fica 2 segundos estático na tela
-@export var tempo_intervalo: float = 3.0  # Tempo de espera entre os disparos
+@export var tempo_ligado: float = 2.0   
+@export var tempo_intervalo: float = 3.0 
 
-var bullet_scene: PackedScene = preload("res://Scenes/lazer.tscn") # Ajuste o caminho se necessário
+var bullet_scene: PackedScene = preload("res://Scenes/lazer.tscn")
 @onready var ponto_de_disparo: Marker3D = $PontoDeDisparo
 
 func _ready() -> void:
-	# Aguarda a cena estabilizar antes de começar o ciclo de tiro
 	await get_tree().process_frame
 	ciclo_de_tiro()
 
@@ -54,8 +53,6 @@ func atirar() -> Node:
 func take_damage(amount: int) -> void:
 	health -= amount
 	var main_node = get_tree().current_scene
-	if main_node and main_node.has_method("perde_integridade"):
-		main_node.perde_integridade()
 	if health <= 0:
 		die()
 

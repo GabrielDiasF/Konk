@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://blla5bgcrjkho" path="res://Scenes/lazer_enemy.tscn" id="7_q82eo"]
 [ext_resource type="PackedScene" uid="uid://1aamuodxof4f" path="res://Scenes/enemy.tscn" id="8_i8l23"]
 [ext_resource type="PackedScene" uid="uid://cbr56srxy84l" path="res://Scenes/wall.tscn" id="9_dpkg2"]
+[ext_resource type="Texture2D" uid="uid://cuvl42ley47eh" path="res://Images/Fundo.png" id="10_delgk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qgby4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -396,42 +397,55 @@ transform = Transform3D(1.7830704, 0.90590024, -4.1448583e-16, -0.90590024, 1.78
 
 [node name="Enemy" parent="World/Enemies" unique_id=1137421008 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999995, -2.2649367e-07, 0, 0, -6.556705e-08, 1.4999995, -2.2649367e-07, 1.4999995, 6.5567065e-08, -94.08452, 5.1417193, -1.7053026e-13)
+health = 1
 
 [node name="Enemy7" parent="World/Enemies" unique_id=31213174 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556698e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 103.35983, -5.4901977, 1.9895197e-13)
+health = 1
 
 [node name="Enemy9" parent="World/Enemies" unique_id=657607891 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.5566944e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 187.21295, -2.2926958, 3.9790393e-13)
+health = 1
 
 [node name="Enemy11" parent="World/Enemies" unique_id=1652647923 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556694e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 259.2053, -2.2926927, 5.684342e-13)
+health = 1
 
 [node name="Enemy12" parent="World/Enemies" unique_id=690322921 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556692e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 255.86542, 0.11942005, 5.968559e-13)
+health = 1
 
 [node name="Enemy13" parent="World/Enemies" unique_id=522658478 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556691e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 261.43182, 2.902629, 6.252776e-13)
+health = 1
 
 [node name="Enemy10" parent="World/Enemies" unique_id=1797690119 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556694e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 184.7738, 0.4840808, 3.9790393e-13)
+health = 1
 
 [node name="Enemy8" parent="World/Enemies" unique_id=458696802 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 1.4210855e-14, 1.4210855e-14, -6.556697e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, 103.35983, -9.0938015, 1.9895197e-13)
+health = 1
 
 [node name="Enemy2" parent="World/Enemies" unique_id=884733518 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999993, -2.2649367e-07, 0, 0, -6.5567036e-08, 1.4999993, -2.2649367e-07, 1.4999993, 6.5567065e-08, -95.88634, -7.112272, -1.7053026e-13)
+health = 1
 
 [node name="Enemy3" parent="World/Enemies" unique_id=1888099933 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999994, -2.2649367e-07, 0, 0, -6.556704e-08, 1.4999994, -2.2649367e-07, 1.4999994, 6.5567065e-08, -95.88635, 3.603602, -1.7053026e-13)
+health = 1
 
 [node name="Enemy4" parent="World/Enemies" unique_id=1211085533 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, 0, 0, -6.556703e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, -94.08455, 2.056994, -1.7053026e-13)
+health = 1
 
 [node name="Enemy5" parent="World/Enemies" unique_id=2135123943 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, -7.1054274e-15, -7.1054274e-15, -6.556703e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, -94.084564, -9.009007, -1.7053026e-13)
+health = 1
 
 [node name="Enemy6" parent="World/Enemies" unique_id=904838710 instance=ExtResource("8_i8l23")]
 transform = Transform3D(-1.4999992, -2.2649367e-07, -7.1054274e-15, -7.1054274e-15, -6.5567e-08, 1.4999992, -2.2649367e-07, 1.4999992, 6.5567065e-08, -34.28453, -4.8501005, -2.842171e-14)
+health = 1
 
 [node name="teto" type="AnimatableBody3D" parent="World" unique_id=2107768639]
 transform = Transform3D(0.75, 3.5527137e-15, 2.1175824e-22, -3.5527137e-15, 0.75, 1.2621775e-29, -2.1175824e-22, -1.8932662e-29, 0.75, -105.405396, 6.348874, -1.9895197e-13)
@@ -509,14 +523,22 @@ transform = Transform3D(5.905961e-08, -2.7027028, -1.9711842e-07, 2.009958, -8.7
 
 [node name="Wall" parent="World" unique_id=1042523675 instance=ExtResource("9_dpkg2")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, -82.51602, 30.075989, 3.8631407e-07)
+health = 5
 
 [node name="Wall2" parent="World" unique_id=1323810418 instance=ExtResource("9_dpkg2")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, -267.1775, 31.594296, 3.8631387e-07)
+health = 5
 
 [node name="Wall3" parent="World" unique_id=1488482558 instance=ExtResource("9_dpkg2")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, 214.57635, 31.594322, 3.8631495e-07)
+health = 5
 
 [node name="Wall4" parent="World" unique_id=638851734 instance=ExtResource("9_dpkg2")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, 365.54956, 31.594328, 3.8631524e-07)
+health = 5
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1514587343]
+transform = Transform3D(-2.2442924e-07, -2.1592236, 4.371139e-08, -1.1221458e-07, 9.438266e-08, 1, -2.5671701, 1.8876541e-07, -4.3711392e-08, 1.714516, -3.1596375, 19.605488)
+texture = ExtResource("10_delgk")
 
 [connection signal="body_entered" from="World/AreaPassar" to="." method="_on_area_passar_body_entered"]

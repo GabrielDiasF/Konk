@@ -1,6 +1,6 @@
 extends AnimatableBody3D
 
-@export var health: int = 10
+@export var health: int = 5
 @export var efeito_quebra_scene: PackedScene
 
 var _quebrada: bool = false

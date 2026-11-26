@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var health: int = 10
+@export var health: int = 1
 
 var bullet_scene: PackedScene = preload("res://Scenes/EnemyBullet.tscn")
 
@@ -38,11 +38,14 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("DEBUG: Inimigo levou tiro!")
 	
-	var main_node = get_tree().current_scene
+	if not is_inside_tree():
+		return
+		
+	var tree := get_tree()
+	var main_node := tree.current_scene if tree else null
 	
-	if main_node:
-		if main_node.has_method("perde_integridade"):
-			main_node.perde_integridade()
+	if main_node and main_node.has_method("perde_integridade"):
+		main_node.perde_integridade()
 	
 	if health <= 0:
 		die()

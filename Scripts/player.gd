@@ -8,6 +8,17 @@ const SPEED = 5.0
 @export var health: int = 10
 @export var tempo_esmagado_para_morrer: float = 0.12
 
+@export_group("Dano de Paredes")
+@export var dano_parede_normal: int = 1
+@export var cooldown_dano_parede: float = 0.6
+
+@export_group("Inclinacao da Nave")
+## Opcional: arraste o nó visual/modelo da nave aqui para girar só o visual sem afetar colisão/muzzle. Se deixar vazio, gira o próprio nó.
+@export var visual_node: Node3D
+@export var angulo_inclinacao_graus: float = 30.0
+@export var velocidade_giro: float = 12.0
+@export var inverter_inclinacao: bool = true
+
 @export_group("Limites da Tela")
 @export var limit_left: float = -12.0
 @export var limit_right: float = 12.0
@@ -23,6 +34,7 @@ var time_since_last_shot: float = 0.0
 @onready var fixed_x: float = global_position.x
 
 var _tempo_sendo_esmagado: float = 0.0
+var _pode_tomar_dano_parede: bool = true
 var _morto: bool = false
 
 func _physics_process(delta: float) -> void:
@@ -39,12 +51,22 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	_atualizar_inclinacao(dir_y, delta)
+
 	move_and_slide()
 	if _morto or not is_inside_tree():
 		return
-		
+
+	_verificar_dano_paredes()
+	if _morto or not is_inside_tree():
+		return
+
 	velocity.x = 0 
 	move_and_slide()
+	if _morto or not is_inside_tree():
+		return
+
+	_verificar_dano_paredes()
 	if _morto or not is_inside_tree():
 		return
 
@@ -58,6 +80,38 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and time_since_last_shot >= fire_rate:
 		fire()
 		time_since_last_shot = 0.0
+
+func _atualizar_inclinacao(dir_y: float, delta: float) -> void:
+	var alvo: Node3D = visual_node if visual_node else self
+	var fator := -1.0 if inverter_inclinacao else 1.0
+	var angulo_alvo_rad := deg_to_rad(dir_y * angulo_inclinacao_graus * fator)
+	alvo.rotation.x = lerp_angle(alvo.rotation.x, angulo_alvo_rad, clamp(velocidade_giro * delta, 0.0, 1.0))
+
+func _verificar_dano_paredes() -> void:
+	if _morto or not is_inside_tree() or not _pode_tomar_dano_parede:
+		return
+
+	for i in range(get_slide_collision_count()):
+		var colisao := get_slide_collision(i)
+		var collider := colisao.get_collider()
+		if not collider:
+			continue
+
+		if collider is AnimatableBody3D or collider.is_in_group("Paredes"):
+			_aplicar_dano_parede(dano_parede_normal)
+			break
+
+func _aplicar_dano_parede(quantidade: int) -> void:
+	if quantidade <= 0 or _morto or not is_inside_tree():
+		return
+
+	_pode_tomar_dano_parede = false
+	take_damage(quantidade)
+
+	if cooldown_dano_parede > 0.0 and is_inside_tree():
+		await get_tree().create_timer(cooldown_dano_parede).timeout
+		if is_inside_tree():
+			_pode_tomar_dano_parede = true
 
 func _verificar_esmagamento(delta: float) -> void:
 	if _morto or not is_inside_tree():
@@ -140,12 +194,25 @@ func fire():
 
 # --- SISTEMA DE DANO E TREMOR DA CÂMARA ---
 
+func _atualizar_ui_vida() -> void:
+	if not is_inside_tree():
+		return
+	var tree := get_tree()
+	var cena_atual := tree.current_scene if tree else null
+	if cena_atual:
+		if "lives" in cena_atual:
+			cena_atual.lives = health
+		if "ui_node" in cena_atual and cena_atual.ui_node:
+			if cena_atual.ui_node.has_method("atualizar_vidas"):
+				cena_atual.ui_node.atualizar_vidas(health)
+
 func take_damage(amount: int) -> void:
 	if _morto:
 		return
 
-	health -= amount
+	health = max(0, health - amount)
 	print("Player levou dano! Vida restante: ", health)
+	_atualizar_ui_vida()
 	
 	# Dispara o tremor na câmara atual do jogo
 	tremer_cam(0.2, 0.25)
@@ -184,16 +251,15 @@ func die():
 		return
 	_morto = true
 	print("Player destruído!")
+	_atualizar_ui_vida()
 	morreu.emit()
 
 	var tree := get_tree()
-	var cena_atual = tree.current_scene if tree else null
-	if cena_atual:
-		if cena_atual.has_method("perde_vidas"):
-			cena_atual.perde_vidas()
-		elif cena_atual.has_method("game_over"):
-			cena_atual.game_over()
-		elif cena_atual.has_method("mostrar_tela_morte"):
-			cena_atual.mostrar_tela_morte()
+	var cena_atual := tree.current_scene if tree else null
+	if cena_atual and "lives" in cena_atual:
+		cena_atual.lives = 0
+
+	if is_inside_tree():
+		get_tree().change_scene_to_file("res://Scenes/tela_morte.tscn")
 
 	queue_free()

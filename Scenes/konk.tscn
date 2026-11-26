@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1aamuodxof4f" path="res://Scenes/enemy.tscn" id="6_kiwkd"]
 [ext_resource type="PackedScene" uid="uid://cq3x7h2cvx8k" path="res://Scenes/bombEnemy.tscn" id="8_on2c3"]
 [ext_resource type="PackedScene" uid="uid://cbr56srxy84l" path="res://Scenes/wall.tscn" id="9_xxbdg"]
+[ext_resource type="Texture2D" uid="uid://cuvl42ley47eh" path="res://Images/Fundo.png" id="10_f63vx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxbdg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -320,7 +321,7 @@ fire_rate = 0.225
 mouse_filter = 2
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=895571735]
-transform = Transform3D(3.5527135e-15, 1, 8.742278e-08, -3.5527137e-15, -8.742278e-08, 1, 1, -3.5527137e-15, 3.5527133e-15, 0.0961003, 10.186054, 8.421018)
+transform = Transform3D(3.5527135e-15, 1, 8.742278e-08, -3.5527137e-15, -8.742278e-08, 1, 1, -3.5527137e-15, 3.5527133e-15, 0.059723347, 10.258686, 8.448361)
 
 [node name="Timer" type="Timer" parent="." unique_id=301477700]
 
@@ -450,36 +451,47 @@ transform = Transform3D(-2.7027025, -2.3627774e-07, -1.0328029e-14, 2.3627774e-0
 
 [node name="Enemy3" parent="World" unique_id=2081346548 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, -268.87408, 4.7876945, 3.8631396e-07)
+health = 1
 
 [node name="Enemy5" parent="World" unique_id=1137421008 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 104.7901, 14.114442, 3.863148e-07)
+health = 1
 
 [node name="Enemy6" parent="World" unique_id=195979057 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 104.7901, 2.5226512, 3.8631487e-07)
+health = 1
 
 [node name="Enemy7" parent="World" unique_id=1148921942 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 268.23633, 7.7367144, 3.863153e-07)
+health = 1
 
 [node name="Enemy8" parent="World" unique_id=1234281506 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 403.12408, 8.47128, 3.8631563e-07)
+health = 1
 
 [node name="Enemy9" parent="World" unique_id=967996984 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 403.12408, -2.441887, 3.8631566e-07)
+health = 1
 
 [node name="Enemy10" parent="World" unique_id=1409559905 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 546.47705, 6.8532796, 3.8631606e-07)
+health = 1
 
 [node name="Enemy11" parent="World" unique_id=121116243 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, 571.1989, 14.654226, 3.863162e-07)
+health = 1
 
 [node name="Enemy4" parent="World" unique_id=1933176634 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027025, 2.3627776e-07, -1.1813888e-07, -1.1813888e-07, 5.1640143e-15, 2.7027025, 2.3627776e-07, 2.7027025, 5.1640143e-15, -133.9267, 4.787701, 3.863142e-07)
+health = 1
 
 [node name="Enemy2" parent="World" unique_id=1124208595 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027028, 2.3627778e-07, -1.1813889e-07, -1.1813889e-07, 5.1640147e-15, 2.7027028, 2.3627778e-07, 2.7027028, 5.1640147e-15, -286.93976, 0.70851517, 3.8631367e-07)
+health = 1
 
 [node name="Enemy" parent="World" unique_id=2137789346 instance=ExtResource("6_kiwkd")]
 transform = Transform3D(-2.7027028, 2.362778e-07, -1.1813889e-07, -1.1813889e-07, 5.164014e-15, 2.7027028, 2.362778e-07, 2.7027028, 5.1640143e-15, -278.32538, 8.972756, 3.863137e-07)
+health = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World" unique_id=169083830]
 callback_mode_process = 0
@@ -494,8 +506,14 @@ transform = Transform3D(-8.002361e-08, -2.7027028, -2.1030739e-07, 1.690722, -2.
 
 [node name="Wall" parent="World" unique_id=1042523675 instance=ExtResource("9_xxbdg")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, 252.05127, 14.356121, 3.8631472e-07)
+health = 5
 
 [node name="Wall2" parent="World" unique_id=1323810418 instance=ExtResource("9_xxbdg")]
 transform = Transform3D(-2.7027025, 3.5441673e-07, -1.181389e-07, -3.5441673e-07, -2.7027025, -5.164015e-15, -1.181389e-07, 1.032803e-14, 2.7027025, -202.0368, 25.80464, 3.8631384e-07)
+health = 5
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=716261488]
+transform = Transform3D(-3.2453003e-22, 1.5030383, 1.0637648e-07, -7.424382e-15, -1.3139979e-07, 1.2168051, 2.0897777, 5.3398647e-15, 2.3249318e-15, 0.038342606, -2.4902234, 9.834835)
+texture = ExtResource("10_f63vx")
 
 [connection signal="body_entered" from="World/AreaPassar" to="." method="_on_area_passar_body_entered"]

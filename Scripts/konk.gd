@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func perde_integridade() -> void:
 	print("DEBUG: A função perde_integridade foi chamada com sucesso!")
-	integrity -= 1
+	integrity -= 5
 	
 	# Garante que a integridade nunca será menor do que 0
 	integrity = max(0, integrity)

@@ -19,12 +19,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -39.0
-offset_right = 173.5
-offset_bottom = 39.0
+offset_left = -236.25
+offset_top = -67.0
+offset_right = 236.25
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 text = "Jogar"
 
 [node name="Creditos_btn" type="Button" parent="." unique_id=1546696834]
@@ -34,12 +35,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = 75.0
-offset_right = 173.5
-offset_bottom = 153.0
+offset_left = -236.0
+offset_top = 93.0
+offset_right = 236.0
+offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 text = "Créditos"
 
 [node name="Sair_btn" type="Button" parent="." unique_id=1243989463]
@@ -49,18 +51,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = 182.0
-offset_right = 173.5
-offset_bottom = 260.0
+offset_left = -236.0
+offset_top = 260.0
+offset_right = 236.0
+offset_bottom = 394.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sair
+theme_override_font_sizes/font_size = 32
+text = "Fases
+
 "
 
 [node name="Capa" type="Sprite2D" parent="." unique_id=150080115]
 z_index = -1
-position = Vector2(960, 540)
+position = Vector2(959.99994, 539.99994)
 texture = ExtResource("2_rrt2p")
 
 [connection signal="pressed" from="Jogar_btn" to="." method="_on_jogar_btn_pressed"]
